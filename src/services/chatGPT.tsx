@@ -15,20 +15,25 @@ const openAi = new OpenAIApi(configuration);
 const DEFAULT_SYSTEM_MESSAGE: ChatCompletionRequestMessage = {
   role: "system",
   content:
-    "Hello, I am an assitant, and I will help you to generate posts, ads, and brand kits based on your needs.",
+    "Hello, I am an assitant, and I will help you to generate posts, ads, and brand kits based on your needs. I want to provide the best experience and results, so your product grows. I want to optimize your workflow and save your time and money.",
 };
 
 const DEFAULT_CONFIG: CreateChatCompletionRequest = {
   max_tokens: 150,
   n: 1,
   stop: "\n",
-  model: "",
+  model: "gpt-3.5-turbo",
   messages: [],
+  temperature: 0.9,
 };
 
-const generatePrompt = async (message: string) => {
+const generatePrompt = async (
+  message: string,
+  options?: CreateChatCompletionRequest
+) => {
   const { data: prompt } = await openAi.createChatCompletion({
     ...DEFAULT_CONFIG,
+    ...options,
     messages: [
       {
         role: "user",
