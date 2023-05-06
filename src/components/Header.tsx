@@ -49,7 +49,11 @@ const UserNavSection = () => {
   if (isSignedIn) return <UserButton />;
 
   const buttonClasses = getButtonClasses();
-  return <SignInButton className={buttonClasses}>Iniciar sesión</SignInButton>;
+  return (
+    <SignInButton>
+      <div className={buttonClasses}>Iniciar sesión</div>
+    </SignInButton>
+  );
 };
 
 export const Header = () => {
