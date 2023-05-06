@@ -7,6 +7,7 @@ export default {
       colors: {
         primary: "#AA96DA",
         accent: "hsl(280,100%,70%)",
+        "accent-dark": "hsl(280,100%,50%)",
         background: "#040209",
       },
     },
