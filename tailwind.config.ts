@@ -3,7 +3,13 @@ import { type Config } from "tailwindcss";
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#AA96DA",
+        accent: "hsl(280,100%,70%)",
+        background: "#040209",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;
