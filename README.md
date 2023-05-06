@@ -4,15 +4,22 @@
 
 ## Challenge 2: ChatGPT
 
-## Database
+## Tech Stack
 
-### Prisma
+- Database:
+  - Provider: [PlanetScale](https://planetscale.com/)
+  - ORM: [Prisma](https://prisma.io/)
+- Backend + Frontend:
+  - [Next.js](https://nextjs.org/)
+  - [TRPC](https://trpc.io/)
+- Auth
+  - [Clerk](https://clerk.dev/)
+- Image Storage:
+  - [Cloudinary](https://cloudinary.com/)
 
-### Prisma Studio
+## TODO
 
-### PlanetScale
-
-### Sync Prisma Schema with PlanetScale
+- [ ] Add keys and necessary things to have every Clerk integration working.
 
 ## Create T3 App
 
