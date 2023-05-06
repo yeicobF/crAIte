@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "prisma.prisma",
+    "wallabyjs.console-ninja",
+    "dotenv.dotenv-vscode",
+    "dbaeumer.vscode-eslint",
+    "kisstkondoros.vscode-gutter-preview",
+    "wix.vscode-import-cost",
+    "bradlc.vscode-tailwindcss",
+    "meganrogge.template-string-converter",
+    "pflannery.vscode-versionlens"
+  ]
+}
