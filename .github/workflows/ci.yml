@@ -1,0 +1,27 @@
+name: Lint and Typecheck
+
+on: [push, pull_request]
+
+env:
+  DATABASE_URL: "https://placeholder.com"
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "placeholder"
+  CLERK_SECRET_KEY: "placeholder"
+  OPENAI_API_CHAT_GPT_KEY: "placeholder"
+  OPENAI_API_DALLE_KEY: "placeholder"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint

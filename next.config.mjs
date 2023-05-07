@@ -18,5 +18,15 @@ const config = {
   //   locales: ["en"],
   //   defaultLocale: "en",
   // },
+
+  // Definimos el typechecking desde una GitHub Action, por lo que Vercel ya no
+  // la tiene que hacer. Esto nos ahorrará build time.
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  swcMinify: true,
 };
 export default config;
