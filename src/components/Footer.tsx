@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { crIAte } from "~/constants";
+import { crAIte } from "~/constants";
 import { Logo } from "./Logo";
 
 const FOOTER_LINKS = [
   {
-    name: "Acerca de",
-    href: "/about",
+    name: "Agradecimientos",
+    href: "/thanks",
   },
   {
     name: "Precios",
@@ -16,12 +16,12 @@ const FOOTER_LINKS = [
 export const Footer = () => {
   return (
     <footer className="w-full border-t border-slate-600">
-      <div className="mx-auto w-full max-w-screen-xl gap-4 p-4 md:py-6">
+      <div className="mx-auto w-full max-w-screen-lg gap-4 p-4 md:py-6">
         <div className="flex flex-wrap justify-items-center gap-8 sm:items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <Logo />
             <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-              {crIAte.name}
+              {crAIte.name}
             </span>
           </Link>
           <ul className="flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 gap-4">
@@ -38,7 +38,7 @@ export const Footer = () => {
         <span className="block text-sm text-gray-500 dark:text-gray-400 sm:text-center">
           {`${new Date().getFullYear()} `}
           <Link href="/" className="font-bold hover:underline">
-            {crIAte.name}
+            {crAIte.name}
           </Link>
         </span>
       </div>

@@ -1,9 +1,7 @@
-import { crIAte } from "~/constants";
+import { crAIte } from "~/constants";
 import { Logo } from "./Logo";
 import Link from "next/link";
-import { LoadingSpinner } from "./LoadingSpinner";
-import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
-import { getButtonClasses } from "~/helpers/buttons";
+import { NavUserSection } from "./Nav/UserSection";
 
 const NAV_ITEMS = [
   {
@@ -42,31 +40,17 @@ const NAV_ITEMS = [
   },
 ];
 
-const UserNavSection = () => {
-  const { isLoaded, isSignedIn } = useUser();
-
-  if (!isLoaded) return <LoadingSpinner size={24} />;
-  if (isSignedIn) return <UserButton />;
-
-  const buttonClasses = getButtonClasses();
-  return (
-    <SignInButton>
-      <div className={buttonClasses}>Iniciar sesión</div>
-    </SignInButton>
-  );
-};
-
 export const Header = () => {
   return (
-    <header className="relative  border-gray-200  bg-gray-900">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+    <header className="w-full relative  border-gray-200  bg-gray-900">
+      <div className="mx-auto w-full flex max-w-screen-lg flex-wrap items-center justify-between p-4">
         <Link href="/" className="flex items-center gap-2">
-          <Logo size={32} />
+          <Logo />
           <span className="self-center whitespace-nowrap text-2xl font-semibold ">
-            {crIAte.name}
+            {crAIte.name}
           </span>
         </Link>
-        <UserNavSection />
+        <NavUserSection />
       </div>
     </header>
   );
