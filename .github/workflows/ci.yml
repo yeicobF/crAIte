@@ -2,6 +2,14 @@ name: Lint and Typecheck
 
 on: [push, pull_request]
 
+env:
+  DATABASE_URL: "placeholder"
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "placeholder"
+  CLERK_SECRET_KEY: "placeholder"
+  OPENAI_API_CHAT_GPT_KEY: "placeholder"
+  OPENAI_API_DALLE_KEY: "placeholder"
+  NODE_ENV: "placeholder"
+
 jobs:
   build:
     runs-on: ubuntu-latest
