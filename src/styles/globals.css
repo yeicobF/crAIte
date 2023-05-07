@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("./fonts.css");
-
 @layer base {
   body {
     min-height: 100vh;

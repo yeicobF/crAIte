@@ -1,5 +1,3 @@
-"use client";
-
 import { LoadingSpinner } from "~/components/LoadingSpinner";
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { getButtonClasses } from "~/helpers/buttons";
