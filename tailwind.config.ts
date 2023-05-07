@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#AA96DA",
-        accent: "hsl(280,100%,70%)",
+        primary: "#CC66FF",
+        accent: "#CC66FF",
         "accent-dark": "hsl(280,100%,50%)",
         background: "#040209",
       },
