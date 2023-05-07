@@ -26,6 +26,7 @@ const schibstedGroteskFont = Schibsted_Grotesk({
   display: "swap",
   subsets: ["latin"],
   preload: true,
+  fallback: ["sans-serif"],
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -34,10 +35,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <ClerkProvider>
         <html lang="en">
           <body
-            className={`${schibstedGroteskFont.className} flex min-h-screen  flex-col justify-between items-center w-full bg-gradient-to-b from-[#15162c] to-[#040209]`}
+            className={`${schibstedGroteskFont.className} flex min-h-screen  w-full flex-col items-center justify-between bg-gradient-to-b from-[#15162c] to-[#040209]`}
           >
             <Header />
-            <div className="container my-8 w-full flex max-w-xl md:max-w-3xl flex-1 flex-col items-center gap-12 mb-16 px-4 lg:px-0">
+            <div className="container my-8 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-12 px-4 md:max-w-3xl lg:px-0">
               {children}
             </div>
             <Footer />
