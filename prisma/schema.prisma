@@ -19,14 +19,14 @@ model Example {
 }
 
 model BrandColors {
-    id         String    @id @default(cuid())
-    createdAt  DateTime  @default(now())
-    updatedAt  DateTime  @updatedAt
+    id         String     @id @default(cuid())
+    createdAt  DateTime   @default(now())
+    updatedAt  DateTime   @updatedAt
     primary    String
     secondary  String
     accent     String
-    BrandKit   BrandKit? @relation(fields: [brandKitId], references: [id])
-    brandKitId String?   @unique
+    brandKitId String?    @unique
+    BrandKit   BrandKit[]
 }
 
 model BrandFont {
@@ -49,14 +49,15 @@ model BrandInappropiateContent {
 }
 
 model BrandKit {
-    id        String        @id @default(cuid())
-    createdAt DateTime      @default(now())
-    updatedAt DateTime      @updatedAt
-    brand     Brand         @relation(fields: [brandId], references: [id])
-    brandId   String        @unique
-    logoUrl   String
-    colors    BrandColors[]
-    BrandFont BrandFont[]
+    id            String      @id @default(cuid())
+    createdAt     DateTime    @default(now())
+    updatedAt     DateTime    @updatedAt
+    brand         Brand       @relation(fields: [brandId], references: [id])
+    brandId       String      @unique
+    logoUrl       String
+    colors        BrandColors @relation(fields: [brandColorsId], references: [id])
+    BrandFont     BrandFont[]
+    brandColorsId String
 }
 
 model BrandCompetitors {
@@ -86,7 +87,7 @@ model Brand {
     BrandKit                 BrandKit?
     BrandInappropiateContent BrandInappropiateContent[]
     Post                     Post[]
-    Ad                       Ad?
+    Ad                       Ad[]
 }
 
 model AIImage {
