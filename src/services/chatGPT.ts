@@ -5,6 +5,7 @@ import {
   type ChatCompletionRequestMessage,
   type CreateChatCompletionRequest,
 } from "openai";
+import { type BrandKitRequest } from "~/types";
 
 const configuration = new Configuration({
   apiKey: env.OPENAI_API_DALLE_KEY,
@@ -15,10 +16,10 @@ const openAi = new OpenAIApi(configuration);
 const DEFAULT_SYSTEM_MESSAGE: ChatCompletionRequestMessage = {
   role: "system",
   content:
-    ("Hello, I am your personal Content Creation Assitant.\n" +
+    "Hello, I am your personal Content Creation Assitant.\n" +
     "I am going to help you on POSTS, ADS, and BRAND KITS generation, based on your needs. " +
-    "My purpose is to provide you with the best experience and results, so your product grows. " + 
-    "I want to optimize your workflow and save your time and money."),
+    "My purpose is to provide you with the best experience and results, so your product grows. " +
+    "I want to optimize your workflow and save your time and money.",
 };
 
 const DEFAULT_CONFIG: CreateChatCompletionRequest = {
@@ -56,6 +57,8 @@ const generatePrompt = async (
 
   return generatedMessage;
 };
+
+const generateBrandKit = async (props: BrandKitRequest) => {};
 
 export const chatGptService = {
   generatePrompt,
