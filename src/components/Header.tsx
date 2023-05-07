@@ -12,6 +12,11 @@ const NAV_ITEMS = [
     requiresAuth: true,
   },
   {
+    name: "My brands",
+    href: "/brands",
+    requiresAuth: true,
+  },
+  {
     name: "Create",
     href: "/create",
     items: [
@@ -51,9 +56,9 @@ const NAV_ITEMS = [
 
 export const Header = () => {
   const router = useRouter();
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
 
-  console.log({ router });
+  console.log({ router, user });
 
   return (
     <header className="relative w-full  border-gray-200  bg-gray-900">
@@ -65,9 +70,7 @@ export const Header = () => {
           <ul className="flex items-center gap-4 md:gap-8">
             {NAV_ITEMS.map(({ name, requiresAuth, href }) => {
               if (requiresAuth && !isSignedIn) return null;
-              const isActive = router.asPath === href;
-
-              console.log({ isActive, router, href });
+              const isActive = router.asPath.includes(href);
 
               return (
                 <li

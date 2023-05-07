@@ -8,8 +8,18 @@ const SectionLayout = (props: PropsWithChildren) => {
   );
 };
 
-const SectionTitle = (props: { title: string }) => {
-  return <h2 className="text-3xl sm:text-5xl font-bold">{props.title}</h2>;
+const SectionTitle = ({
+  title,
+  ...rest
+}: {
+  title: string;
+  [key: string]: any;
+}) => {
+  return (
+    <h2 className="text-3xl font-bold sm:text-5xl" {...rest}>
+      {title}
+    </h2>
+  );
 };
 
 export { SectionLayout, SectionTitle };
