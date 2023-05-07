@@ -1,9 +1,15 @@
 /* Regular */
-@font-face {
+/* @font-face {
   font-family: "Schibsted Grotesk";
   src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Black.woff2")
     format("woff2");
   font-weight: 900;
+}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
 }
 @font-face {
   font-family: "Schibsted Grotesk";
@@ -34,10 +40,10 @@
   src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Thin.woff2")
     format("woff2");
   font-weight: 100;
-}
+} */
 
 /* Italics */
-@font-face {
+/* @font-face {
   font-family: "Schibsted Grotesk";
   src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-BlackItalic.woff2")
     format("woff2");
@@ -78,4 +84,4 @@
     format("woff2");
   font-weight: 100;
   font-style: italic;
-}
+} */
