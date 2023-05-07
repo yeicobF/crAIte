@@ -13,7 +13,7 @@ const schibstedGroteskFont = Schibsted_Grotesk({
   display: "swap",
   subsets: ["latin"],
   preload: true,
-  fallback: ["sans-serif"],
+  fallback: [],
 });
 
 const MyApp: AppType = ({ Component, pageProps }) => {
