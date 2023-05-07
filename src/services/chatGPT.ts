@@ -58,7 +58,7 @@ const generatePrompt = async (
   return generatedMessage;
 };
 
-const generateBrandKit = async (props: BrandKitRequest) => {};
+// const generateBrandKit = async (props: BrandKitRequest) => {};
 
 export const chatGptService = {
   generatePrompt,
