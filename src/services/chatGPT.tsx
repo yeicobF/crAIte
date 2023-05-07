@@ -15,7 +15,10 @@ const openAi = new OpenAIApi(configuration);
 const DEFAULT_SYSTEM_MESSAGE: ChatCompletionRequestMessage = {
   role: "system",
   content:
-    "Hello, I am an assitant, and I will help you to generate posts, ads, and brand kits based on your needs. I want to provide the best experience and results, so your product grows. I want to optimize your workflow and save your time and money.",
+    ("Hello, I am your personal Content Creation Assitant.\n" +
+    "I am going to help you on POSTS, ADS, and BRAND KITS generation, based on your needs. " +
+    "My purpose is to provide you with the best experience and results, so your product grows. " + 
+    "I want to optimize your workflow and save your time and money."),
 };
 
 const DEFAULT_CONFIG: CreateChatCompletionRequest = {
