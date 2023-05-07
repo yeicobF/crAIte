@@ -43,12 +43,9 @@ const NAV_ITEMS = [
 export const Header = () => {
   return (
     <header className="w-full relative  border-gray-200  bg-gray-900">
-      <div className="mx-auto w-full flex max-w-screen-lg flex-wrap items-center justify-between p-4">
+      <div className="mx-auto w-full flex max-w-screen-lg flex-wrap items-center justify-between px-4 py-2">
         <Link href="/" className="flex items-center gap-2">
-          <Logo />
-          <span className="self-center whitespace-nowrap text-2xl font-semibold ">
-            {crAIte.name}
-          </span>
+          <Logo size={48} />
         </Link>
         <NavUserSection />
       </div>
