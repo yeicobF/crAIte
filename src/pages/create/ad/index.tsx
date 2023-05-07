@@ -9,7 +9,7 @@ const CreateAd: NextPage = () => {
   const promptSendForm = useForm<{ prompt: string; }>();
   const [str, setStr] = useState<string>("")
   const onGeneratePrompt: SubmitHandler<AdFields> = (data) => {
-    let newPrompt: string = "I want you to generate one " + data.tone + " advertising of " + data.type + " type about " +
+    const newPrompt: string = "I want you to generate one " + data.tone + " advertising of " + data.type + " type about " +
       data.about + " to be published on " + data.where + ", which its name is \""+ data.name + "\" and belongs to our " + 
       "company named \"" + data.org + "\". " + data.who + " people would love my product because it has " + data.reasons + 
       ". This ad will be valid until " + data.deadline + " so let's tell people to take advantage of it before the " +
