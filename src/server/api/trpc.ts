@@ -17,6 +17,7 @@
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 
 import { prisma } from "~/server/db";
+import { getAuth } from "@clerk/nextjs/server";
 
 type CreateContextOptions = Record<string, never>;
 
@@ -42,8 +43,20 @@ const createInnerTRPCContext = (_opts: CreateContextOptions) => {
  *
  * @see https://trpc.io/docs/context
  */
-export const createTRPCContext = (_opts: CreateNextContextOptions) => {
-  return createInnerTRPCContext({});
+export const createTRPCContext = (opts: CreateNextContextOptions) => {
+  // Next `req` de la API.
+  const { req } = opts;
+
+  // Clerk utiliza JWTs para validar la sesión del uusario.
+  const sesh = getAuth(req);
+  const userId = sesh.userId;
+
+  return {
+    prisma,
+    // Devolvemos el usuario de Clerk para que esté disponible en el contexto al
+    // declarar un router y usar `ctx`.
+    userId,
+  };
 };
 
 /**
@@ -53,7 +66,7 @@ export const createTRPCContext = (_opts: CreateNextContextOptions) => {
  * ZodErrors so that you get typesafety on the frontend if your procedure fails due to validation
  * errors on the backend.
  */
-import { initTRPC } from "@trpc/server";
+import { TRPCError, initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
@@ -93,3 +106,19 @@ export const createTRPCRouter = t.router;
  * are logged in.
  */
 export const publicProcedure = t.procedure;
+
+const enforceUserIsAuthenticated = t.middleware(async ({ ctx, next }) => {
+  if (!ctx.userId) {
+    throw new TRPCError({
+      code: "UNAUTHORIZED",
+    });
+  }
+
+  return next({
+    ctx: {
+      userId: ctx.userId,
+    },
+  });
+});
+
+export const privateProcedure = t.procedure.use(enforceUserIsAuthenticated);
