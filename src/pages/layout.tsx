@@ -6,7 +6,6 @@ import { Header } from "~/components/Header";
 import { Schibsted_Grotesk } from "next/font/google";
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
-import { TRPCClientProvider } from "./TRPCClient";
 
 export const metadata: Metadata = {
   title: crAIte.name,
@@ -31,20 +30,18 @@ const schibstedGroteskFont = Schibsted_Grotesk({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <TRPCClientProvider>
-      <ClerkProvider>
-        <html lang="en">
-          <body
-            className={`${schibstedGroteskFont.className} flex min-h-screen  w-full flex-col items-center justify-between bg-gradient-to-b from-[#15162c] to-[#040209]`}
-          >
-            <Header />
-            <div className="container my-8 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-12 px-4 md:max-w-3xl lg:px-0">
-              {children}
-            </div>
-            <Footer />
-          </body>
-        </html>
-      </ClerkProvider>
-    </TRPCClientProvider>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${schibstedGroteskFont.className} flex min-h-screen  w-full flex-col items-center justify-between bg-gradient-to-b from-[#15162c] to-[#040209]`}
+        >
+          <Header />
+          <div className="container my-8 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-12 px-4 md:max-w-3xl lg:px-0">
+            {children}
+          </div>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
