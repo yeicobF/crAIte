@@ -17,3 +17,136 @@ model Example {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
+
+model BrandColors {
+    id         String    @id @default(cuid())
+    createdAt  DateTime  @default(now())
+    updatedAt  DateTime  @updatedAt
+    primary    String
+    secondary  String
+    accent     String
+    BrandKit   BrandKit? @relation(fields: [brandKitId], references: [id])
+    brandKitId String?   @unique
+}
+
+model BrandFont {
+    id         String   @id @default(cuid())
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
+    name       String
+    url        String
+    BrandKit   BrandKit @relation(fields: [brandKitId], references: [id])
+    brandKitId String   @unique
+}
+
+model BrandInappropiateContent {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    brand     Brand    @relation(fields: [brandId], references: [id])
+    brandId   String   @unique
+    content   String
+}
+
+model BrandKit {
+    id        String        @id @default(cuid())
+    createdAt DateTime      @default(now())
+    updatedAt DateTime      @updatedAt
+    brand     Brand         @relation(fields: [brandId], references: [id])
+    brandId   String        @unique
+    logoUrl   String
+    colors    BrandColors[]
+    BrandFont BrandFont[]
+}
+
+model BrandCompetitors {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    name      String
+    Brand     Brand?   @relation(fields: [brandId], references: [id])
+    brandId   String?  @unique
+}
+
+model Brand {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    name      String
+
+    ownerId                  String
+    mood                     String
+    description              String
+    purpose                  String
+    keywords                 String
+    keyValues                String
+    targetAudience           String
+    competitors              BrandCompetitors[]
+    uniqueSellingPoints      String
+    BrandKit                 BrandKit?
+    BrandInappropiateContent BrandInappropiateContent[]
+    Post                     Post[]
+    Ad                       Ad?
+}
+
+model AIImage {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    url       String
+    Post      Post[]
+    Ad        Ad?
+}
+
+model AISuggestedPost {
+    postId String @unique
+    Post   Post   @relation(fields: [postId], references: [id])
+    Ad     Ad[]
+}
+
+model Post {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    brand     Brand    @relation(fields: [brandId], references: [id])
+    brandId   String   @unique
+    title     String
+    content   String
+    image     AIImage? @relation(fields: [aIImageId], references: [id])
+    date      DateTime
+    author    String
+    source    String
+    tags      String
+
+    type            String
+    category        String
+    language        String
+    sentiment       String
+    score           Float
+    AISuggestedPost AISuggestedPost?
+    aIImageId       String?          @unique
+}
+
+model Ad {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    brand     Brand    @relation(fields: [brandId], references: [id])
+    brandId   String   @unique
+    title     String
+    content   String
+    image     AIImage? @relation(fields: [aIImageId], references: [id])
+    date      DateTime
+    author    String
+    source    String
+    tags      String
+
+    type                  String
+    category              String
+    language              String
+    sentiment             String
+    score                 Float
+    AISuggestedPost       AISuggestedPost? @relation(fields: [aISuggestedPostPostId], references: [postId])
+    aIImageId             String?          @unique
+    aISuggestedPostPostId String?          @unique
+}
