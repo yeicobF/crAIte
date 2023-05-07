@@ -22,7 +22,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       <Head>
         <title>{crAIte.name}</title>
         <meta name="description" content={crAIte.description.en} />
-        <link rel="icon" href="/favicon/dark.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon/letter-c.svg" type="image/svg+xml" />
       </Head>
 
       <div
