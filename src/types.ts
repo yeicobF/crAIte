@@ -52,4 +52,22 @@ type BrandKitRequest = {
   userId: User["id"];
 };
 
-export type { User, Brand, BrandColors, BrandKit, BrandKitRequest, AdFields };
+type ContentProductType = "post" | "ad" | "kit";
+
+type ContentProduct = {
+  name: string;
+  description: string;
+  img: string;
+  id: ContentProductType;
+};
+
+export type {
+  User,
+  Brand,
+  BrandColors,
+  BrandKit,
+  BrandKitRequest,
+  AdFields,
+  ContentProduct,
+  ContentProductType,
+};

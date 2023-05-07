@@ -29,7 +29,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         className={`flex min-h-screen  w-full flex-col items-center justify-between bg-gradient-to-b from-[#15162c] to-[#040209]`}
       >
         <Header />
-        <div className="container my-8 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-12 px-4 md:max-w-3xl lg:px-0">
+        <div className="container my-8 md:my-16 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-20 px-4 md:max-w-3xl lg:px-0">
           <Component {...pageProps} />
         </div>
         <Footer />

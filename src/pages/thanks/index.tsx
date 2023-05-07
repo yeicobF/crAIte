@@ -9,9 +9,9 @@ const About: NextPage = () => {
   return (
     <>
       <SectionLayout>
-        <SectionTitle title="Agradecimientos" />
+        <SectionTitle title="Thank You!" />
         <div>
-          Damos las gracias a{" "}
+          We want to express our gratitude to{" "}
           <Link
             href={TULUM_CRYPTO_FEST.url}
             target="_blank"
@@ -19,8 +19,8 @@ const About: NextPage = () => {
           >
             Tulum Crypto Fest 2023
           </Link>{" "}
-          por organizar un evento tan interesante y por apoyar a la comunidad de
-          desarrolladores.
+          for hosting such an exciting event and for supporting the developer
+          community.
         </div>
         <CardLink href={TULUM_CRYPTO_FEST.url}>
           <Image
@@ -35,7 +35,8 @@ const About: NextPage = () => {
       <SectionLayout>
         <SectionTitle title="Sponsors" />
         <p>
-          Gracias a los sponsors por su colaboración y apoyo a la comunidad.
+          We also extend a huge thank you to all of our sponsors for their
+          collaboration and unwavering support of the community.
         </p>
         <div className="mx-auto grid grid-cols-2 items-center justify-center gap-4 sm:px-10 md:grid-cols-3">
           {SPONSORS.map(({ name, url, logo }: Sponsor) => (

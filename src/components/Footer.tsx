@@ -4,12 +4,12 @@ import { Logo } from "./Logo";
 
 const FOOTER_LINKS = [
   {
-    name: "Agradecimientos",
-    href: "/thanks",
+    name: "Pricing",
+    href: "/pricing",
   },
   {
-    name: "Precios",
-    href: "/pricing",
+    name: "Tulum Crypto Fest 2023",
+    href: "/thanks",
   },
 ];
 

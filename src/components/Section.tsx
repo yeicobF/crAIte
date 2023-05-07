@@ -2,7 +2,7 @@ import { type PropsWithChildren } from "react";
 
 const SectionLayout = (props: PropsWithChildren) => {
   return (
-    <section className="flex flex-col items-center justify-center gap-6">
+    <section className="flex flex-col items-center justify-center gap-10">
       {props.children}
     </section>
   );
