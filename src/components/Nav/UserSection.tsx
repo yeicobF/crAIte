@@ -10,7 +10,7 @@ export const NavUserSection = () => {
 
   return (
     <Button as="div">
-      <SignInButton>Iniciar sesión</SignInButton>
+      <SignInButton />
     </Button>
   );
 };
