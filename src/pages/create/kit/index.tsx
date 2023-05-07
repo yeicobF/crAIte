@@ -9,7 +9,7 @@ const CreateKit: NextPage = () => {
   const promptSendForm = useForm<{ prompt: string; }>();
   const [str, setStr] = useState<string>("")
   const onGeneratePrompt: SubmitHandler<Brand> = (data) => {
-    const newPrompt: string = "I want you to generate a brand kit for my brand which is named \"" + data.brandName + "\"" +
+    const newPrompt: string = "I want you to generate a brand kit for my brand which is named \"" + data.name + "\"" +
       ". The following sentence describes my brand: \"" + data.description + "\" and \"" + data.mood + "\" are the " + 
       "words that could represent the mood. I want you to consider these keywords for my brand \"" + data.keywords + 
       "\" and these key values that I want to transmit \""+ data.keyValues +"\". What I do with my brand is "+ 
@@ -31,9 +31,9 @@ const CreateKit: NextPage = () => {
             <form className="w-full flex-col gap-4" onSubmit={promptGenForm.handleSubmit(onGeneratePrompt)}>
               <div>
                 <div className="mb-2 block">
-                  <label htmlFor="brandName">My brand is named...</label>
+                  <label htmlFor="name">My brand is named...</label>
                 </div>
-                <input className="text-black w-full" {...promptGenForm.register("brandName", {required: true})} 
+                <input className="text-black w-full" {...promptGenForm.register("name", {required: true})} 
                   placeholder="Microsoft, Meta, Twitter"/>
               </div>
               <div>
