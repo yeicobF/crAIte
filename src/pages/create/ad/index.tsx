@@ -3,6 +3,7 @@ import { SectionLayout, SectionTitle } from "~/components/Section";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { AdFields } from "~/types";
 import { useState } from "react";
+
 const CreateAd: NextPage = () => {
   const promptGenForm = useForm<AdFields>();
   const promptSendForm = useForm<{ prompt: string; }>();
