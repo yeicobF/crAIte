@@ -7,6 +7,12 @@ import { type ContentProduct } from "~/types";
 
 const PRODUCTS: Array<ContentProduct> = [
   {
+    name: "Brand",
+    description: "Register your brand to reduce repetitive work.",
+    id: "brand",
+    img: "/content-products/brand.png",
+  },
+  {
     name: "Posts",
     description: "Create stunning social media posts with ease.",
     id: "post",

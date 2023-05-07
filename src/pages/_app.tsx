@@ -6,6 +6,7 @@ import Head from "next/head";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "react-hot-toast";
 // import { Schibsted_Grotesk } from "next/font/google";
 
 // https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#google-fonts
@@ -25,11 +26,13 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon/letter-c.svg" type="image/svg+xml" />
       </Head>
 
+      <Toaster position="bottom-center" />
+
       <div
         className={`flex min-h-screen  w-full flex-col items-center justify-between bg-gradient-to-b from-[#15162c] to-[#040209]`}
       >
         <Header />
-        <div className="container my-8 md:my-16 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-20 px-4 md:max-w-3xl lg:px-0">
+        <div className="container my-4 mb-16 flex w-full max-w-xl flex-1 flex-col items-center gap-20 px-4 md:my-16 md:max-w-3xl lg:px-0">
           <Component {...pageProps} />
         </div>
         <Footer />

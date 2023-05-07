@@ -1,9 +1,12 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { withClerkMiddleware } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-export default authMiddleware();
+export default withClerkMiddleware(() => {
+  console.log("middleware running");
+  return NextResponse.next();
+});
 
+// Stop Middleware running on static files
 export const config = {
-  // https://clerk.com/docs/nextjs/read-session-and-user-data
-  matcher: [],
-  // matcher: ["/((?!.*\\..*|_next).*)"],
+  matcher: "/((?!_next/image|_next/static|favicon.ico).*)",
 };

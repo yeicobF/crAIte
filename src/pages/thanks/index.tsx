@@ -1,6 +1,6 @@
 import { type NextPage } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import { TextLink } from "~/components/Link";
 import { CardLink } from "~/components/Card";
 import { SectionLayout, SectionTitle } from "~/components/Section";
 import { SPONSORS, type Sponsor, TULUM_CRYPTO_FEST } from "~/data";
@@ -12,13 +12,9 @@ const About: NextPage = () => {
         <SectionTitle title="Thank You!" />
         <div>
           We want to express our gratitude to{" "}
-          <Link
-            href={TULUM_CRYPTO_FEST.url}
-            target="_blank"
-            className="font-semibold underline"
-          >
+          <TextLink href={TULUM_CRYPTO_FEST.url} target="_blank">
             Tulum Crypto Fest 2023
-          </Link>{" "}
+          </TextLink>{" "}
           for hosting such an exciting event and for supporting the developer
           community.
         </div>
