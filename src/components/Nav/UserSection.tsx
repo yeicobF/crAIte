@@ -1,6 +1,6 @@
 import { LoadingSpinner } from "~/components/LoadingSpinner";
 import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
-import { getButtonClasses } from "~/helpers/buttons";
+import { Button } from "~/components/Button";
 
 export const NavUserSection = () => {
   const { isLoaded, isSignedIn } = useUser();
@@ -8,10 +8,9 @@ export const NavUserSection = () => {
   if (!isLoaded) return <LoadingSpinner size={24} />;
   if (isSignedIn) return <UserButton />;
 
-  const buttonClasses = getButtonClasses();
   return (
-    <SignInButton>
-      <div className={buttonClasses}>Iniciar sesión</div>
-    </SignInButton>
+    <Button as="div">
+      <SignInButton>Iniciar sesión</SignInButton>
+    </Button>
   );
 };
