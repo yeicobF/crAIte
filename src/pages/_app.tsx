@@ -1,12 +1,12 @@
 import "~/styles/globals.css";
 import { type AppType } from "next/app";
 import { api } from "~/utils/api";
-import { Schibsted_Grotesk } from "next/font/google";
 import { crAIte } from "~/constants";
 import Head from "next/head";
 import { Footer } from "~/components/Footer";
 import { Header } from "~/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Schibsted_Grotesk } from "next/font/google";
 
 // https://nextjs.org/docs/pages/building-your-application/optimizing/fonts#google-fonts
 // https://nextjs.org/docs/app/api-reference/components/font#subsets
