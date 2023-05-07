@@ -9,7 +9,7 @@ const CreateKit: NextPage = () => {
   const promptSendForm = useForm<{ prompt: string; }>();
   const [str, setStr] = useState<string>("")
   const onGeneratePrompt: SubmitHandler<Brand> = (data) => {
-    let newPrompt: string = "I want you to generate a brand kit for my brand which is named \"" + data.brandName + "\"" +
+    const newPrompt: string = "I want you to generate a brand kit for my brand which is named \"" + data.brandName + "\"" +
       ". The following sentence describes my brand: \"" + data.description + "\" and \"" + data.mood + "\" are the " + 
       "words that could represent the mood. I want you to consider these keywords for my brand \"" + data.keywords + 
       "\" and these key values that I want to transmit \""+ data.keyValues +"\". What I do with my brand is "+ 
