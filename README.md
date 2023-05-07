@@ -1,6 +1,6 @@
-# crIAte - Tulum Crypto Fest 2023: Hackathon
+# crAIte - Tulum Crypto Fest 2023: Hackathon
 
-- URL: [crIAte](https://criate-hackathon.vercel.app/)
+- URL: [crAIte](https://criate-hackathon.vercel.app/)
 
 ## Challenge 2: ChatGPT
 

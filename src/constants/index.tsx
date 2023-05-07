@@ -1,5 +1,5 @@
-const crIAte = {
-  name: "crIAte",
+const crAIte = {
+  name: "crAIte",
   description: {
     en: "Generate content for ads and posts for social networks using ChatGPT and DALLE 2 APIs.",
     es: "Genera contenido para anuncios y posts para redes sociales usando las APIs de ChatGPT y DALLE 2.",
@@ -18,4 +18,4 @@ const LOGO_VARIANTS = {
   dark: "/logo/dark.svg",
 };
 
-export { crIAte, LOGO_VARIANTS };
+export { crAIte, LOGO_VARIANTS };
