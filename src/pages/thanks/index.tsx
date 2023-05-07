@@ -43,8 +43,8 @@ const About: NextPage = () => {
               <Image
                 src={logo}
                 alt={`Logotipo de Sponsor ${name}`}
-                height={256}
-                width={256}
+                height={80}
+                width={224}
               />
             </CardLink>
           ))}
