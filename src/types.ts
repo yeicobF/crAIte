@@ -20,7 +20,7 @@ type AdFields = {
 type Brand = {
   ownerId: User["id"];
   id: string;
-  brandName: string;
+  name: string;
   mood: string;
   description: string;
   purpose: string;
@@ -52,7 +52,7 @@ type BrandKitRequest = {
   userId: User["id"];
 };
 
-type ContentProductType = "post" | "ad" | "kit";
+type ContentProductType = "post" | "ad" | "kit" | "brand";
 
 type ContentProduct = {
   name: string;
