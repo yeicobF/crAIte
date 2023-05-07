@@ -1,4 +1,3 @@
-import { crAIte } from "~/constants";
 import { Logo } from "./Logo";
 import Link from "next/link";
 import { NavUserSection } from "./Nav/UserSection";

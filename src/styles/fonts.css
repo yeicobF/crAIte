@@ -1,93 +1,87 @@
 /* Regular */
-
 /* @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Black.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Black.woff2")
+    format("woff2");
   font-weight: 900;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Bold.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-ExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Bold.woff2")
+    format("woff2");
   font-weight: 700;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Medium.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Medium.woff2")
+    format("woff2");
   font-weight: 500;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Regular.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Regular.woff2")
+    format("woff2");
   font-weight: 400;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Light.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Light.woff2")
+    format("woff2");
   font-weight: 300;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Thin.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Thin.woff2")
+    format("woff2");
   font-weight: 100;
 } */
 
 /* Italics */
-
 /* @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-BlackItalic.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-BlackItalic.woff2")
+    format("woff2");
   font-weight: 900;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-BoldItalic.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-BoldItalic.woff2")
+    format("woff2");
   font-weight: 700;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-MediumItalic.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-MediumItalic.woff2")
+    format("woff2");
   font-weight: 500;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Italic.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-Italic.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-LightItalic.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-LightItalic.woff2")
+    format("woff2");
   font-weight: 300;
   font-style: italic;
 }
-
 @font-face {
   font-family: "Schibsted Grotesk";
-  src: url("../assets/fonts/SchibstedGrotesk/SchibstedGrotesk-ThinItalic.ttf")
-    format("truetype");
+  src: url("/fonts/SchibstedGrotesk/SchibstedGrotesk-ThinItalic.woff2")
+    format("woff2");
   font-weight: 100;
   font-style: italic;
 } */
