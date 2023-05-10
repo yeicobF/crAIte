@@ -1,8 +1,8 @@
 import { Logo } from "./Logo";
 import Link from "next/link";
 import { NavUserSection } from "./Nav/UserSection";
-import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/router";
+import { type User } from "@clerk/nextjs/server";
 
 const NAV_ITEMS = [
   {
@@ -54,11 +54,8 @@ const NAV_ITEMS = [
   },
 ];
 
-export const Header = () => {
+export const Header = ({ user }: { user?: User }) => {
   const router = useRouter();
-  const { isSignedIn, user } = useUser();
-
-  console.log({ router, user });
 
   return (
     <header className="relative w-full  border-gray-200  bg-gray-900">
@@ -68,8 +65,8 @@ export const Header = () => {
         </Link>
         <nav className="hidden flex-1 items-center justify-center sm:flex">
           <ul className="flex items-center gap-4 md:gap-8">
-            {NAV_ITEMS.map(({ name, requiresAuth, href }) => {
-              if (requiresAuth && !isSignedIn) return null;
+            {NAV_ITEMS.map(({ name, href }) => {
+              // if (requiresAuth && !user) return null;
               const isActive = router.asPath.includes(href);
 
               return (

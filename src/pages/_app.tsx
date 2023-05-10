@@ -18,6 +18,7 @@ import { Toaster } from "react-hot-toast";
 // });
 
 const MyApp: AppType = ({ Component, pageProps }) => {
+
   return (
     <ClerkProvider {...pageProps}>
       <Head>
@@ -40,4 +41,5 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     </ClerkProvider>
   );
 };
+
 export default api.withTRPC(MyApp);
