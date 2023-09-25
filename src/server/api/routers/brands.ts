@@ -1,10 +1,11 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
-import { createTRPCRouter, privateProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, privateProcedure, publicProcedure } from "~/server/api/trpc";
 
 export const brandsRouter = createTRPCRouter({
-  getById: privateProcedure
+  // getById: privateProcedure
+  getById: publicProcedure
     .input(
       z.object({
         id: z.string(),
@@ -31,7 +32,8 @@ export const brandsRouter = createTRPCRouter({
         },
       });
 
-      if (!brand || brand.ownerId !== ownerId) {
+      if (!brand) {
+        // if (!brand || brand.ownerId !== ownerId) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Brand not found" });
       }
 
@@ -41,7 +43,8 @@ export const brandsRouter = createTRPCRouter({
   // Un procedure es un método para generar una función que se llama desde el
   // cliente. Al ser público, indicamos que cualquier usuario puede acceder a
   // los posts.
-  getAll: privateProcedure.query(async ({ ctx }) => {
+  // getAll: privateProcedure.query(async ({ ctx }) => {
+  getAll: publicProcedure.query(async ({ ctx }) => {
     return await ctx.prisma.brand.findMany({
       take: 100,
       orderBy: [{ createdAt: "desc" }],
