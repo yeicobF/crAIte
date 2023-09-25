@@ -7,13 +7,13 @@ import { generateSSGHelper } from "~/server/helpers/ssgHelper";
 import { api } from "~/utils/api";
 
 const BrandsContent = () => {
-  const { data: brands, isLoading } = api.brands.getUserBrands.useQuery();
+  const { data: brands, isLoading } = api.brands.getAll.useQuery();
 
   if (isLoading) return <LoadingSpinner />;
 
   if (!brands) {
     return (
-      <div>
+      <div className="text-center">
         <p>You have not registered any brand yet 🤔</p>
         <div>
           <TextLink href="/create/brand">Register your brand</TextLink> and
@@ -25,7 +25,7 @@ const BrandsContent = () => {
 
   return (
     <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-      {brands.map(({ id, description, name }) => (
+      {brands?.map(({ id, description, name }) => (
         <HorizontalCard
           key={id}
           href={`/brands/${id}`}
@@ -64,7 +64,7 @@ export async function getServerSideProps(
 
   // Prefetch nos permite obtener los datos "ahead of time" para después
   // 'hidrate them' mediante `server side props`.
-  await ssgHelpers.brands.getUserBrands.prefetch();
+  await ssgHelpers.brands.getAll.prefetch();
 
   return {
     props: {
