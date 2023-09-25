@@ -9,12 +9,12 @@ const NAV_ITEMS = [
     // Solo lo podrán ver usuarios autenticados.
     name: "My content",
     href: "/content",
-    requiresAuth: true,
+    requiresAuth: false,
   },
   {
     name: "My brands",
     href: "/brands",
-    requiresAuth: true,
+    requiresAuth: false,
   },
   {
     name: "Create",
